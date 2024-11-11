@@ -7,8 +7,8 @@ const Button = ({ text, styleType }) => {
       : "bg-white text-black";
 
   return (
-    <button className="${buttonStyles} relative flex items-center justify-center px-2 py-2 overflow-hidden font-medium transition duration-300 ease-out border-2 rounded-full group">
-      <span className="absolute flex items-center justify-center w-full h-full duration-300 -translate-x-full ">
+    <button className={`${buttonStyles} px-3 relative flex items-center justify-center py-2 overflow-hidden font-medium transition duration-300 ease-out rounded-full group active:opacity-70 shadow-inner shadow-black`}>
+      <span className="absolute flex items-center justify-center w-full h-full duration-300 -translate-x-full  group-hover:translate-x-0 ease">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x-bind:width="size"
@@ -28,11 +28,8 @@ const Button = ({ text, styleType }) => {
           <path d="M13 6l6 6"></path>
         </svg>
       </span>
-      {text}
+      <span className="px-3 flex items-start justify-center w-full h-full transition-all duration-300 transform group-hover:translate-x-full ease">{text}</span>
     </button>
-    // <button className={`px-2 py-2 rounded-full ${buttonStyles} shadow-inner hover:shadow-lg hover:opacity-70`}>
-    //   {text}
-    // </button>
   );
 };
 
